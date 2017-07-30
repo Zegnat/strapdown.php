@@ -1,0 +1,43 @@
+{
+    "name": "zegnat/strapdown.php",
+    "type": "library",
+    "description": "Simple writing Markdown within HTML, inspired by Strapdown.js.",
+    "keywords": [
+        "markdown",
+        "html",
+        "cli"
+    ],
+    "homepage": "https://github.com/zegnat/strapdown.php",
+    "license": "0BSD",
+    "authors": [
+        {
+            "name": "Martijn van der Ven",
+            "email": "martijn@vanderven.se",
+            "homepage": "http://vanderven.se/martijn/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~7.0",
+        "erusev/parsedown": "^1.6"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zegnat\\Strapdown\\": "src"
+        }
+    },
+    "scripts": {
+        "check-style": "phpcs -p --standard=PEAR --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 bin src"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

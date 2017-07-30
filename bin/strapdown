@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use Zegnat\Strapdown\Strapdown;
+use Zegnat\Strapdown\Map;
+use Zegnat\Strapdown\Converter\Markdown;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$runner = new Strapdown(new Map(['text/markdown' => new Markdown()]));
+$file = file_get_contents($argv[1]);
+
+echo $runner->strapString($file);
