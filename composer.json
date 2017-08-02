@@ -19,7 +19,8 @@
     ],
     "require": {
         "php": "~7.0",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "gregwar/rst": "^1.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0.2"

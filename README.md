@@ -40,7 +40,7 @@ permanent.
 4. (Optional) Grab a demo file to run Strapdown.php against:
 
    ```
-   wget https://gist.githubusercontent.com/Zegnat/c02190dbb7af24242a9e7bc9403eb5b9/raw/11610c07a1da5581999f3b55814279894d3cd83b/sample.html
+   wget https://gist.githubusercontent.com/Zegnat/c02190dbb7af24242a9e7bc9403eb5b9/raw/f49f987bce2791323f588d8e107f45f61096dd3d/sample.html
    ```
 
 5. Run it:
