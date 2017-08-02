@@ -11,7 +11,7 @@ class Map
     public function __construct(array $map)
     {
         foreach ($map as $format => $converter) {
-            $this->set($format, $converter);
+            $this->_set($format, $converter);
         }
     }
 
