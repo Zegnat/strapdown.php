@@ -31,6 +31,13 @@ class Strapdown
             $fragment->appendXML($text);
             $element->parentNode->replaceChild($fragment, $element);
         }
-        return $dom->saveHTML();
+        $return = $dom->saveHTML();
+        if (extension_loaded('tidy')) {
+            $tidy = new \Tidy();
+            $tidy->parseString($return, ['indent' => 2]);
+            $tidy->cleanRepair();
+            $return = strval($tidy);
+        }
+        return $return;
     }
 }
