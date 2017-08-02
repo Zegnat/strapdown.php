@@ -32,6 +32,9 @@
             "Zegnat\\Strapdown\\": "src"
         }
     },
+    "bin": [
+        "bin/strapdown"
+    ],
     "scripts": {
         "check-style": "phpcs -p --standard=PEAR --exclude='PEAR.Commenting.FunctionComment,PEAR.Commenting.FileComment,PEAR.Commenting.ClassComment' --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 bin src"
     },
