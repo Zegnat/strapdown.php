@@ -45,7 +45,13 @@ class Strapdown
         $return = $dom->saveHTML();
         if (extension_loaded('tidy')) {
             $tidy = new \Tidy();
-            $tidy->parseString($return, ['indent' => 2]);
+            $tidy->parseString(
+                $return,
+                [
+                    'indent' => 2, // 2 = 'auto'
+                    'wrap' => 0, // 0 = no wrapping
+                ]
+            );
             $tidy->cleanRepair();
             $return = strval($tidy);
         }
