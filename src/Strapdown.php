@@ -27,8 +27,19 @@ class Strapdown
                 $text .= $dom->saveXML($child);
             }
             $text = $this->_map->converter($language)->convert($text);
-            $fragment = $dom->createDocumentFragment();
-            $fragment->appendXML($text);
+            $fragment = $dom->createDocumentFragment();;
+            if ($fragment->appendXML($text) === false) {
+                // The converter output could not be imported as XML.
+                // It may be HTML that does validate as well-formed XML.
+                $importDom = new \DOMDocument();
+                $id = 'importhtmlfragment';
+                $importDom->loadHTML('<div id="' . $id . '">' . $text . '</div>');
+                $importFragment = $importDom->getElementById($id);
+                foreach ($importFragment->childNodes as $node) {
+                    $node = $fragment->ownerDocument->importNode($node, true);
+                    $fragment->appendChild($node);
+                }
+            }
             $element->parentNode->replaceChild($fragment, $element);
         }
         $return = $dom->saveHTML();
